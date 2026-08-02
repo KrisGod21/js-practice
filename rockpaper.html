@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: rgb(35, 29, 29);
+            color:white;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .hehe{
+            height:60px;
+            width:60px;
+        }
+        #result-display{
+            color:yellow;
+            font-size: 22px;
+        }
+        #score-display{
+            color: lightblue;
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        let win = 0;
+        let lose = 0;
+        let tie = 0;
+
+        function solve(a){
+            const choices = ["Rock", "Paper", "Scissors"];
+            const random_num = Math.floor(Math.random() * 3); 
+            
+            // Fixed: "res" matches your variable name below
+            const res = document.getElementById("result-display");
+            const scoreRes = document.getElementById("score-display");
+            
+            let roundMsg = "";
+
+            // Fixed: Changed "var1" to "a"
+            if(random_num == a){
+                roundMsg = "It's a Tie!";
+                tie++;
+            } else if(random_num == 2 && a == 1){
+                roundMsg = "You Lose!";
+                lose++; // Fixed: Changed from win++ to lose++
+            } else if(random_num == 1 && a == 0){
+                roundMsg = "You Lose!";
+                lose++;
+            } else if(random_num == 0 && a == 2){
+                roundMsg = "You Lose!";
+                lose++;
+            } else {
+                roundMsg = "You Win! 🎉";
+                win++;
+            }
+
+            // Fixed: Changed from displayElement to res
+            res.innerText = `You chose ${choices[a]}. Computer chose ${choices[random_num]}. ${roundMsg}`;
+            
+            // Update the live scoreboard on the screen
+            scoreRes.innerText = `Wins: ${win} | Losses: ${lose} | Ties: ${tie}`;
+
+            const testobj = {
+                name: 'sneha',
+                age : 10
+            };
+            console.log(testobj['name']);
+            localStorage.setItem("message","hello");
+            console.log(localStorage.getItem("message"));
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor game</title>
+</head>
+<body>
+    
+    <h1>Rock Paper Scissors</h1>
+    <button onclick="solve(0)" style="background: none; border :none; cursor: pointer;"> <img class= "hehe" src = "leadership.png"> </button>
+    <button onclick="solve(1)" style="background: none; border :none; cursor: pointer;"> <img class= "hehe" src = "hello.png"></button>
+    <button onclick="solve(2)" style="background: none; border :none; cursor: pointer;"><img class= "hehe" src = "two.png"></button>
+    
+    <h3 id="result-display">Click an emoji to start playing!</h3>
+    <!-- Added a scoreboard element -->
+    <h4 id="score-display">Wins: 0 | Losses: 0 | Ties: 0</h4>
+    
+</body>
+</html>

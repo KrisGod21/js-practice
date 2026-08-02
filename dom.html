@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let flag = false;
+        function sub(){
+            const res = document.getElementById("subscribe-display");
+            if(flag==false){
+                res.innerText = ("Subscribed!");
+                flag=true;
+            }else{
+                res.innerText = ("UnSubscribed");
+                flag=false;
+            }
+        }
+        
+        function saveInput(){
+            const temp = document.getElementById("shipping-display");
+            const test1 = document.querySelector('UserInput');
+            let var2 = test1.value;
+            if(var2 <= 40){
+                temp.innerText = (`${var2 + 10}`);
+            }else{
+                temp.innerText = (`${var2}`);;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Youtube subscribe button</h1>
+    <button id = "subscribe-display" onclick="sub()">Subscribe</button>
+    <h3>Amazon Shipping Calculator</h3>
+    <h4>Orders under $40 are +$10</h4>
+    <h4>Orders over $40 are free</h4>
+    <input type="number" id = "userInput" onkeydown = "console.log('Typing');" placeholder="Enter cost"> <button onclick="saveInput()    ">Calculate</button>
+    <h4 id="shipping-display">0</h4>
+
+    
+
+
+    
+</body>
+</html>
