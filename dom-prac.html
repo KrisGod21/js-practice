@@ -9,10 +9,23 @@
 <body>
     <button class="test">9a</button>
     <button class="idk">9b</button>
+    <br>
+    <button class="heads" onclick="myFunc('head')">Heads</button> <button class="Tails" onclick="myFunc('tail'  )">Tails</button>
+    <p class = "display-text">You Chose : </p>
     <script>
         console.log(document.querySelector(".test"));
         let temp = document.querySelector(".idk");
         temp.innerText = "9b Done!"
+        function myFunc(a){
+            if(a ==='head'){
+                var2 = document.querySelector(".display-text");
+                var2.innerText = "You Chose : Heads!"
+            }else{
+                var2 = document.querySelector(".display-text");
+                var2.innerText = "You Chose : Tails!";
+            }
+            
+        }
     </script>
 </body>
 
