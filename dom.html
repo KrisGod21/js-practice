@@ -19,8 +19,8 @@
         
         function saveInput(){
             const temp = document.getElementById("shipping-display");
-            const test1 = document.querySelector('UserInput');
-            let var2 = test1.value;
+            const test1 = document.querySelector('#userInput');
+            let var2 = Number(test1.value);
             if(var2 <= 40){
                 temp.innerText = (`${var2 + 10}`);
             }else{
@@ -36,7 +36,7 @@
     <h3>Amazon Shipping Calculator</h3>
     <h4>Orders under $40 are +$10</h4>
     <h4>Orders over $40 are free</h4>
-    <input type="number" id = "userInput" onkeydown = "console.log('Typing');" placeholder="Enter cost"> <button onclick="saveInput()    ">Calculate</button>
+    <input type="number" id = "userInput" onkeydown = "console.log(event.key); if(event.key === 'Enter'){saveInput();}" placeholder="Enter cost" > <button onclick="saveInput()    ">Calculate</button>
     <h4 id="shipping-display">0</h4>
 
     
