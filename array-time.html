@@ -6,12 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>To do list</h2>
+    <input id="userInput" placeholder="Enter text"><button onclick="saveInfo()">Add</button>
     <script>
-        myarr =[1,'name',{4 : 'kris'}];
-        myarr.push(1200);
-        console.log(myarr);
-        myarr.splice(0,2);
-        console.log(myarr);
+        // myarr =[1,'name',{4 : 'kris'}];
+        // myarr.push(1200);
+        // console.log(myarr);
+        // myarr.splice(0,2);
+        // console.log(myarr);
+        let arr = [];
+        
+        function saveInfo(){
+            let var1 = document.getElementById("userInput").value;
+            arr.push(var1);
+            console.log(arr);
+        }
+        
+        
     </script>
+    
 </body>
 </html>
