@@ -1,0 +1,3 @@
+//server ko create karna
+const express = require('express');
+const app = express()
