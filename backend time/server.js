@@ -1,6 +1,7 @@
 
 const express = require('express');
 const app = require("./src/app")
+const connectDB = require("./src/db/db")
 
 // app.get("/",(req,res) =>{
 //     res.send("Hello world");
@@ -9,6 +10,8 @@ const app = require("./src/app")
 // app.get("/about",(req,res)=>{
 //     res.send("about page")
 // });
+
+connectDB();
 const notes =[]
 app.use(express.json())
 app.post('/notes',(req,res)=>{
@@ -46,3 +49,5 @@ app.patch('/notes/:index',(req,res)=>{
 app.listen(3000,() =>{
     console.log("Server is running");
 });
+
+//mongodb time
