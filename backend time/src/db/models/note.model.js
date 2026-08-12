@@ -10,3 +10,4 @@ const noteSchema = new mongoose.Schema({
 
 const noteModel = mongoose.model("note",noteSchema)
 module.exports = noteModel;
+//i need to commit
