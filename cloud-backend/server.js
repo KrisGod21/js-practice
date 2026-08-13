@@ -1,6 +1,7 @@
 const app = require('./src/app');
-const connectDB = require('./src/db/db')
+const connectDB = require('./src/db/db'); // No curly braces needed now
 connectDB();
-app.listen(3000,(req,res)=>{
-    console.log("server running")
-})
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
